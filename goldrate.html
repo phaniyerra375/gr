@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Noto+Sans">
+<style>
+  body {
+    font-family: "Noto Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            color: white;
+            background-color: #171b27;
+        }
+        .container{
+            display: none;
+        }
+        @media (max-width: 768px)  {
+            .container {
+                display: block;
+            text-align: center;
+            padding: 20px;
+            
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            margin: 50px auto;
+            position: fixed;
+        top: 30%;
+        }
+        img {
+    position: fixed;
+    width: 81%;
+    left: 33px;
+    top: 10%;
+    border-radius: 12px;}
+
+        .location {
+            font-size: 17px;
+        font-weight: 100;
+        position: fixed;
+        top: 13px;
+        }
+
+        .temperature {
+            font-size: 2em;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .weather-description {
+            font-size: 1.5em;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+
+        .date {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #cccccc;
+        }
+
+        .forecast {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .day {
+            text-align: center;
+            width: 60px;
+        }
+
+        .day .day-name {
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .day .icon {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .day .high-low {
+            font-size: 1em;
+        }
+        .price {
+    display: flex;
+}
+.matter {
+    bottom: 0px;
+    position: relative;
+}
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="location">Vijayawada<br>°</div>
+    <div class="logo">
+        <img src="https://i.ibb.co/JprgzRw/logo.png" alt="">
+    </div>
+    <div class="price">
+        <div class="temperature">24k <br>1gram<br> 7200</div><hr>
+        <div class="temperature">22k <br>1gram<br> 6590</div>
+    </div>
+    <div class="date">8 Aug Thu</div><br>
+    <div class="price">
+        <div class="temperature">24k <br>1gram<br> 7200</div><hr>
+        <div class="temperature">22k <br>1gram<br> 6590</div>
+    </div>
+    <div class="date">Yesterday</div><br>
+    <div class="matter">
+        <hr>Price change Today and Yesterday - 0
+    </div>
+
+    <!-- <div class="forecast">
+        <div class="day">
+            <div class="day-name">Today</div>
+            <div class="icon">🌧️</div>
+            <div class="high-low">32 / 26°C</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Tomorrow</div>
+            <div class="icon">⛅</div>
+            <div class="high-low">34 / 27°C</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Sat</div>
+            <div class="icon">⛅</div>
+            <div class="high-low">35 / 27°C</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Sun</div>
+            <div class="icon">⛅</div>
+            <div class="high-low">35 / 27°C</div>
+        </div>
+        <div class="day">
+            <div class="day-name">Mon</div>
+            <div class="icon">🌤️</div>
+            <div class="high-low">34 / 27°C</div>
+        </div>
+    </div> -->
+</div>
+
+</body>
+</html>
