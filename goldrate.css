@@ -25,10 +25,11 @@ body {
 
         img {
             position: fixed;
-            width: 81%;
-            left: 33px;
-            top: 10%;
-            border-radius: 12px;
+        width: 35%;
+        left: 111px;
+        top: 14%;
+        border-radius: 12px;
+        border: 1.3px solid black;
         }
 
         .location {
