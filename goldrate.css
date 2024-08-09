@@ -20,7 +20,7 @@ body {
                 max-width: 400px;
                 margin: 50px auto;
                 position: fixed;
-                top: 30%;
+                top: 28%;
         }
 
         img {
@@ -32,12 +32,12 @@ body {
         border: 1.3px solid rgb(255, 255, 255);
         }
         #weather-display {
-            position: absolute;
+            position: fixed;
             font-size: 13px;
             padding: 9px;
             background-color: rgb(0 0 0 / 18%);
             border-radius: 8px;
-            top: -20em;
+            top: 1em;
             right: 1em;
         }
         .location {
@@ -94,7 +94,11 @@ body {
         }
         .matter {
             bottom: 15px;
-            position: relative;
+        position: relative;
+        background: white;
+        color: black;
+        padding: 6px;
+        border-radius: 11px;
         }
 
     }
