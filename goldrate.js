@@ -1,23 +1,46 @@
-// Example function to set background color based on weather
 function setBackgroundBasedOnWeather(weather) {
     const body = document.body;
-    if (weather === 'clear') {
-        body.style.backgroundColor = '#2c3e50'; // Dark Clear Sky
-    } else if (weather === 'clouds') {
-        body.style.backgroundColor = '#34495e'; // Dark Cloudy
-    } else if (weather === 'rain') {
-        body.style.backgroundColor = '#2c3e50'; // Dark Rainy
-    } else if (weather === 'snow') {
-        body.style.backgroundColor = '#95a5a6'; // Dark Snowy
-    } else if (weather === 'sunny') {
-        body.style.backgroundColor = '#d35400'; // Dark Amber for Sunny
-    } else {
-        body.style.backgroundColor = '#171b27'; // Default Dark
+    switch (weather) {
+        case 'clear':
+            body.style.backgroundColor = '#87CEEB'; // Sky Blue for Clear Sky
+            break;
+        case 'few clouds':
+            body.style.backgroundColor = '#B0C4DE'; // Light Steel Blue for Few Clouds
+            break;
+        case 'scattered clouds':
+            body.style.backgroundColor = '#D3D3D3'; // Light Grey for Scattered Clouds
+            break;
+        case 'broken clouds':
+            body.style.backgroundColor = '#A9A9A9'; // Dark Grey for Broken Clouds
+            break;
+        case 'shower rain':
+        case 'rain':
+            body.style.backgroundColor = '#4682B4'; // Steel Blue for Rain
+            break;
+        case 'thunderstorm':
+            body.style.backgroundColor = '#4B0082'; // Indigo for Thunderstorm
+            break;
+        case 'snow':
+            body.style.backgroundColor = '#F0F8FF'; // Alice Blue for Snow
+            break;
+        case 'mist':
+        case 'fog':
+            body.style.backgroundColor = '#DCDCDC'; // Gainsboro for Mist or Fog
+            break;
+        case 'clear sky':
+            body.style.backgroundColor = '#00BFFF'; // Deep Sky Blue for Clear Sky
+            break;
+        case 'overcast clouds':
+            body.style.backgroundColor = '#808080'; // Grey for Overcast Clouds
+            break;
+        default:
+            body.style.backgroundColor = '#2F4F4F'; // Dark Slate Gray for Default
+            break;
     }
 }
 
 // Mock weather data (replace this with actual data fetching)
-const weather = 'sunny'; // Example weather condition
+const weather = 'clear'; // Example weather condition
 
 // Set the background based on the mock weather
 setBackgroundBasedOnWeather(weather);
@@ -27,6 +50,6 @@ setBackgroundBasedOnWeather(weather);
 // fetch('https://api.openweathermap.org/data/2.5/weather?q=Vijayawada&appid=YOUR_API_KEY')
 //     .then(response => response.json())
 //     .then(data => {
-//         const weatherCondition = data.weather[0].main.toLowerCase();
+//         const weatherCondition = data.weather[0].description.toLowerCase();
 //         setBackgroundBasedOnWeather(weatherCondition);
 //     });
