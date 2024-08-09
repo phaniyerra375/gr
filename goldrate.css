@@ -20,21 +20,9 @@ body {
                 max-width: 400px;
                 margin: 50px auto;
                 position: fixed;
-                top: 3%;
+                top: 30%;
         }
-        .logo p{
-            top: 0em;
-        font-size: 49px;
-        color: black;
-        position: relative;
-        text-align: center;
-        background: aliceblue;
-        border-radius: 49px;
-        padding: 13px;
-        }
-        .logo p:hover{
-            background-color: none;
-        }
+
         img {
             position: fixed;
             width: 81%;
