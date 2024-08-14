@@ -1,65 +1,50 @@
-function setBackgroundBasedOnWeather(weather) {
+function setBackgroundBasedOnTime() {
     const body = document.body;
-    const weatherDisplay = document.getElementById('weather-display');
-    let weatherType = '';
+    const timeDisplay = document.getElementById('time-display');
 
-    switch (weather) {
-        case 'clear':
-            body.style.backgroundColor = '#4682B4'; // Steel Blue for Clear Sky
-            weatherType = 'Clear Sky';
-            break;
-        case 'few clouds':
-            body.style.backgroundColor = '#6A5ACD'; // Slate Blue for Few Clouds
-            weatherType = 'Few Clouds';
-            break;
-        case 'scattered clouds':
-            body.style.backgroundColor = '#A9A9A9'; // Dark Grey for Scattered Clouds
-            weatherType = 'Scattered Clouds';
-            break;
-        case 'broken clouds':
-            body.style.backgroundColor = '#708090'; // Slate Grey for Broken Clouds
-            weatherType = 'Broken Clouds';
-            break;
-        case 'shower rain':
-            body.style.backgroundColor = '#4169E1'; // Royal Blue for Shower Rain
-            weatherType = 'Shower Rain';
-            break;
-        case 'rain':
-            body.style.backgroundColor = '#4169E1'; // Royal Blue for Rain
-            weatherType = 'Rain';
-            break;
-        case 'thunderstorm':
-            body.style.backgroundColor = '#2F4F4F'; // Dark Slate Grey for Thunderstorm
-            weatherType = 'Thunderstorm';
-            break;
-        case 'snow':
-            body.style.backgroundColor = '#B0E0E6'; // Powder Blue for Snow
-            weatherType = 'Snow';
-            break;
-        case 'mist':
-            body.style.backgroundColor = '#BEBEBE'; // Gray for Mist
-            weatherType = 'Mist';
-            break;
-        case 'fog':
-            body.style.backgroundColor = '#BEBEBE'; // Gray for Fog
-            weatherType = 'Fog';
-            break;
-        case 'clear sky':
-            body.style.backgroundColor = '#1E90FF'; // Dodger Blue for Clear Sky
-            weatherType = 'Clear Sky';
-            break;
-        case 'overcast clouds':
-            body.style.backgroundColor = '#696969'; // Dim Gray for Overcast Clouds
-            weatherType = 'Overcast Clouds';
-            break;
-        default:
-            body.style.backgroundColor = '#2F4F4F'; // Dark Slate Gray for Default
-            weatherType = 'Unknown Weather';
-            break;
+    // Get the current IST time
+    const now = new Date();
+    const istHours = now.getHours();
+    const istMinutes = now.getMinutes();
+
+    // Determine background color based on the time of day
+    let color = '';
+    let timeOfDay = '';
+
+    if (istHours >= 5 && istHours < 7) {
+        // Dawn (5 AM to 7 AM)
+        color = '#6A5ACD'; // Slate Blue, darker morning color
+        timeOfDay = 'Dawn';
+    } else if (istHours >= 7 && istHours < 10) {
+        // Morning (7 AM to 10 AM)
+        color = '#4682B4'; // Steel Blue, darker blue for morning
+        timeOfDay = 'Morning';
+    } else if (istHours >= 10 && istHours < 14) {
+        // Midday (10 AM to 2 PM)
+        color = '#4169E1'; // Royal Blue, still bright but darker than noon
+        timeOfDay = 'Midday';
+    } else if (istHours >= 14 && istHours < 17) {
+        // Afternoon (2 PM to 5 PM)
+        color = '#1E90FF'; // Dodger Blue, darker afternoon sky
+        timeOfDay = 'Afternoon';
+    } else if (istHours >= 17 && istHours < 19) {
+        // Evening (5 PM to 7 PM)
+        color = '#FF6347'; // Tomato, darker sunset color
+        timeOfDay = 'Evening';
+    } else if (istHours >= 19 && istHours < 21) {
+        // Dusk (7 PM to 9 PM)
+        color = '#B22222'; // Firebrick, deeper dusk color
+        timeOfDay = 'Dusk';
+    } else {
+        // Night (9 PM to 5 AM)
+        color = 'rgb(0 0 0)'; // Midnight Blue, very dark night sky
+        timeOfDay = 'Night';
     }
 
-    weatherDisplay.textContent = `Weather: ${weatherType}`;
+    // Set the background color and display the current time of day
+    body.style.backgroundColor = color;
+    timeDisplay.textContent = `Time of Day: ${timeOfDay} (Color: ${color}, IST: ${istHours}:${istMinutes < 10 ? '0' + istMinutes : istMinutes})`;
 }
 
-const weather = 'clear'; 
-setBackgroundBasedOnWeather(weather);
+// Call the function to set the background color
+setBackgroundBasedOnTime();
